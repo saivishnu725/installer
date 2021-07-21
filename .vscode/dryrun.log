@@ -1,4 +1,5 @@
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/saivishnu/Programs/c/installer'
-gcc -Wall -Werror -Wextra  *.c -o installer
+./installer
 make: Leaving directory '/home/saivishnu/Programs/c/installer'
  

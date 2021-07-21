@@ -6,22 +6,17 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 21 10:52:20 2021
+# Make data base, printed on Wed Jul 21 11:03:29 2021
 
 # Variables
 
-# makefile (from 'Makefile', line 8)
-OBJ = 
 # environment
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
-# makefile (from 'Makefile', line 6)
-SRC = *.c
 # environment
 GNOME_SHELL_SESSION_MODE = pop
 # environment
- 
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 CHROME_EXECUTABLE = /usr/bin/brave-browser
@@ -31,8 +26,6 @@ VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f17c35f8-ff1e-4695-93b0-6cdc
 VSCODE_CWD = /home/saivishnu/Programs/c/installer
 # environment
 WINDOWPATH = 2
-# makefile (from 'Makefile', line 7)
-LIBS = 
 # default
 MAKE_COMMAND := make
 # environment
@@ -109,8 +102,6 @@ VSCODE_PID = 5468
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from 'Makefile', line 4)
-FLAGS = -Wall -Werror -Wextra
 # environment
 SESSION_MANAGER = local/pop-os:@/tmp/.ICE-unix/1525,unix/pop-os:/tmp/.ICE-unix/1525
 # automatic
@@ -178,9 +169,9 @@ GNUMAKEFLAGS :=
 # environment
 LOGNAME = saivishnu
 # makefile
-.DEFAULT_GOAL := all
-# makefile (from 'Makefile', line 9)
-RM = rm -rf
+.DEFAULT_GOAL := run
+# makefile (from 'Makefile', line 4)
+RM = rm -rfv
 # environment
 DISPLAY = :1
 # environment
@@ -227,8 +218,6 @@ _P9K_TTY = /dev/pts/1
 VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
-# makefile (from 'Makefile', line 5)
-DEBUG_FLAGS = -g -fsanitize=address
 # environment
 VTE_VERSION = 6203
 # default
@@ -240,7 +229,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = pop
 # variable set hash-table stats:
-# Load=114/1024=11%, Rehash=0, Collisions=17/155=11%
+# Load=109/1024=11%, Rehash=0, Collisions=12/139=9%
 
 # Pattern-specific Variable Values
 
@@ -259,129 +248,77 @@ GDMSESSION = pop
 # Files
 
 # Not a target:
-installer-fedora.c:
+Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-07-21 10:31:20.630865049
+#  Last modified 2021-07-21 11:02:57.681161607
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-installer-arch.c:
-#  Implicit rule search has been done.
-#  Last modified 2021-07-21 10:31:20.630865049
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-installer-debian.c:
-#  Implicit rule search has been done.
-#  Last modified 2021-07-21 10:31:20.630865049
-#  File has been updated.
-#  Successfully updated.
-
-debug: fclean
+arch:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
-	$(CC) $(FLAGS) $(DEBUG_FLAGS) $(LIBS) $(SRC) -o $(NAME)
+#  recipe to execute (from 'Makefile', line 11):
+	$(CC) $(NAME)-arch.c -o $(NAME)
 
-# Not a target:
-Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2021-07-21 10:52:19.666833661
-#  File has been updated.
-#  Successfully updated.
- 
-
-installer: installer-arch.c installer-debian.c installer-fedora.c
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := installer
-# automatic
-# * := 
-# automatic
-# < := installer-arch.c
-# automatic
-# + := installer-arch.c installer-debian.c installer-fedora.c
-# automatic
-# % := 
-# automatic
-# ^ := installer-arch.c installer-debian.c installer-fedora.c
-# automatic
-# ? := installer-arch.c installer-debian.c installer-fedora.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=5/16=31%
-#  recipe to execute (from 'Makefile', line 14):
-	$(CC) $(FLAGS) $(LIBS) $(SRC) -o $(NAME)
-
-clean:
+fedora:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 17):
-	$(RM) $(OBJ)
+	$(CC) $(NAME)-fedora.c -o $(NAME)
 
-re: fclean all
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-.DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-all: installer
-#  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
-
-fclean: clean
+clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 20):
 	$(RM) $(NAME)
 
-run: re
+# Not a target:
+ 
+make: *** No rule to make target 'all'.  Stop.
+ 
+.DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 25):
-	./$(NAME)
 
 # Not a target:
-.SUFFIXES:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	./$(NAME)
+
+debian:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	$(CC) $(NAME)-debian.c -o $(NAME)
 
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/35=0%
+# Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 191 B / avg = 9 B
-# current buf: size = 8162 B / used = 191 B / count = 21 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 184 B / avg = 9 B
+# current buf: size = 8162 B / used = 184 B / count = 20 / avg = 9 B
 
-# strcache performance: lookups = 43 / hit rate = 51%
+# strcache performance: lookups = 29 / hit rate = 31%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/43=0%
-# Finished Make data base on Wed Jul 21 10:52:20 2021
+# Load=20/8192=0%, Rehash=0, Collisions=0/29=0%
+# Finished Make data base on Wed Jul 21 11:03:29 2021
 
  

@@ -1,0 +1,4 @@
+make: Entering directory '/home/saivishnu/Programs/c/installer'
+gcc -Wall -Werror -Wextra  *.c -o installer
+make: Leaving directory '/home/saivishnu/Programs/c/installer'
+ 

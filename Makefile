@@ -7,6 +7,14 @@ RM =rm -rfv
 run:
 	./$(NAME)
 
-build:
-	@read -p "Enter the distro (Arch,Debian,Fedora):" distro; \
-	$(CC) $(NAME)-$(distro).c -o $(NAME)
+arch:
+	$(CC) $(NAME)-arch.c -o $(NAME)
+
+debian:
+	$(CC) $(NAME)-debian.c -o $(NAME)
+
+fedora:
+	$(CC) $(NAME)-fedora.c -o $(NAME)
+
+clean:
+	$(RM) $(NAME)
